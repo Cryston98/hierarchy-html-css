@@ -1,0 +1,96 @@
+/*childWordOne este pt elementele ce au subcopii si care nu sunt ultimi copii de pe nivel iar childWordTwo pt elementele care au subcopii dar sunt ultimele Elemente */
+
+body, html {
+    height: 100%;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#dictionaryHierarchyContainer{
+    margin:50px;
+}
+.parentWord, .childWordOne, .childWordTwo{
+    list-style: none;
+}
+.parentWord{
+    margin-left:20px;
+}
+.parentWord .topLi{
+  text-indent: 10px;
+}
+.childWordTwo > li{
+    position:relative;
+     border-left:3px solid red;
+}
+.childWordTwo > li:last-child{
+    background: #f0f0f0; 
+   
+}
+.childWordTwo > li:nth-last-child(2) {
+        position:relative;
+}
+.childWordTwo > li:nth-last-child(2)::after{
+    content: "";
+    position: absolute;
+    left: -3px; 
+    top: 50%; 
+    width: 3px; 
+    height: 50%; 
+    background: #f0f0f0; 
+    z-index: 1;
+}
+
+
+
+.childWordOne{
+    border-left:3px solid red;
+    position:relative;
+    margin-left: 27px;
+    margin-top:5px;
+    line-height:35px;
+    text-indent: 0;
+}
+.childWordTwo{
+    position:relative;
+    margin-left: 27px;
+    margin-top:5px;
+    line-height:35px;
+    text-indent: 0;
+}
+
+.childWordOne li{
+    position:relative;
+    padding-left:20px;
+}
+
+.childWordOne li::before {
+    content: "";
+    z-index:2;
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    width: 17px;
+    height: 3px;
+    background: red;
+}
+
+.childWordOne li:last-child::after {
+    content: "";
+    position: absolute;
+    left: -3px; 
+    top: 50%; 
+    width: 3px; 
+    height: 50%; 
+    background: #f0f0f0; 
+    z-index: 1;
+}
+
+/*.childWordOne li:last-child {*/
+/*    border-left: 3px solid #f0f0f0;*/
+/*}*/
